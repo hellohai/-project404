@@ -1,0 +1,33 @@
+
+
+footer {
+	background: #232426;
+	.footer-colophon {
+		padding: 40px 0;font-size: 14px;text-align: center;
+		p {
+			color: #555;transition: all .5s ease-in-out;line-height: 1.5;
+			a { color: inherit;text-decoration: none;}
+		}
+	}
+	&:hover {
+		p {color: #EBECF0;}
+	}
+}
+
+@include bp(eight-column) {
+	
+}
+
+@include bp(twelve-column) {
+	
+}
+
+@include bp(sixteen-column) {
+
+}
+
+
+
+
+
+

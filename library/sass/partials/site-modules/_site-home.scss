@@ -1,0 +1,316 @@
+// GENERAL
+.title {
+	color: black;text-align: center;	
+}
+.section {position: relative;padding: 20px 0;}
+
+// INTRODUCTION
+.intro {
+	background: #f1f1f3;
+	.intro-section {
+		.title {
+			font-size: 25px;font-family: $font-base-bold;
+			& + p {
+				font-size: 14px;line-height: 1.7;text-align: justify;
+			}
+		}
+		a {
+			margin: 10px auto 40px;
+			display: table;
+		}
+		&:first-of-type {
+			margin-bottom: 25px;
+			margin-top: 40px;
+		}
+	}
+}
+
+// SERVICES
+.services {
+	.title {
+		font-size: 21px;
+		span {
+			font-size: 12px;transition: opacity .3s ease-in-out;
+			&.hide { opacity: 0; }
+		}
+	}
+	.service-titles {
+		text-align: center;position: relative;z-index: 1;padding: 15px 0 0;
+		&.shadow {box-shadow: #333 0px 2px 3px 0px;}
+		li {
+			margin: 0 0 15px;text-transform: uppercase;color: #888a8f;letter-spacing: 2px;
+			cursor: pointer;font-family: $font-base-bold;
+			&.long {
+				span { display: none; }
+			}
+		}
+	}
+	.service-drawer {
+		background: #008974;color: white;font: normal 12px/2.4 $font-base;
+		transition: .2s all;
+		transition: padding .2s ease;
+		 -webkit-backface-visibility: hidden;
+		 -webkit-perspective: 1000;
+		 -webkit-transform: translate3d(0,0,0);
+		::selection {background: white;color: #008974;}
+		&.padding { padding: 40px 0; }
+		li {
+			&.active {
+				&:nth-of-type(1) {
+					height: 175px;
+				}
+				&:nth-of-type(2) {
+					height: 150px;
+				}
+				&:nth-of-type(3) {
+					height: 175px;
+				}
+				&:nth-of-type(4) {
+					height: 175px;
+				}
+				&:nth-of-type(5) {
+					height: 125px;
+				}
+			}
+		}
+	}
+}
+// TO HIDE AND SHOW THE TABS
+.service-drawer li {
+	transform: translate3d(-20px, 0, 20);
+    height: 0;
+    opacity: 0;
+    transition: translate3d opacity height .2s linear;
+    transition: .2s all;
+     -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0,0,0);
+}
+.service-drawer li.active {
+	transform: translate3d(0, 0, 0);
+    opacity: 1;
+    // height of each li is controlled separately
+}
+
+
+
+
+
+
+// REQUIREMENTS
+.req {
+	background: #f1f1f3;padding: 40px 0;
+	h2.title {font-size: 21px;margin-bottom: 40px;}
+	h3.title {font-size: 18px;margin: 30px 0 0;}
+	.quals {
+		text-align: center;
+		span {
+			text-align: center;display: block;margin: 15px 0;font-family: $font-base-bold;font-size: 18px;letter-spacing: 1px;
+		}
+	}
+	p {font-size: 14px;line-height: 1.8;text-align: justify;margin: 0;}
+}
+
+@include bp(four-column, true) {
+	.services {
+		.service-titles {
+			li {
+				padding: 5px;margin: 10px;line-height: 3;display: inline;border: 2px solid #888a8f;
+				&.active {
+					color: white;background-color: #008974;
+				}
+			}
+		}
+	}
+}
+
+@include bp(eight-column) {
+
+	.intro {
+		.intro-section {
+			position: relative;
+			.title {
+				font-size: 25px;width: 125px;text-align: left;line-height: 1.5;position: relative;
+			}
+			p {@include pie-clearfix;}
+			&:first-of-type {
+				margin-bottom: 40px;
+				.title {
+					float: left;margin: 0 70px 70px 0;
+				}
+			}
+			a {
+				display: inline-block;
+			}
+			&:nth-of-type(2) {
+				padding: 0 60px;
+				.title {
+					float: left;margin: 0 70px 30px 0;
+				}
+				p {
+					//direction:rtl;
+					//span {float: right;} // to align period to the right
+				}
+			}
+		}
+	}
+	.services {
+		padding: 40px 0;
+		.title {
+			font-size: 21px;
+		}
+		.service-titles {
+			padding: 20px 0;
+			li {
+				float: left;margin: 0 55px 0 0;font-size: 12px;
+				&.long {
+					span { display: none; }
+				}
+				&:last-of-type {
+					margin: 0;
+				}
+				&.active {
+					color: black;box-shadow:black -2px 5px 0px -3px;
+				}
+			}
+		}
+		.service-drawer {
+			li.active {
+				&:nth-of-type(1) {
+					height: 95px;
+				}
+				&:nth-of-type(2) {
+					height: 95px;
+				}
+				&:nth-of-type(3) {
+					height: 95px;
+				}
+				&:nth-of-type(4) {
+					height: 95px;
+				}
+				&:nth-of-type(5) {
+					height: 55px;
+				}
+			}
+		}
+	}
+	.req {
+		.quals {
+			line-height: 1;margin: 0 0 20px;
+			&:before {
+				top: 15px;
+			}
+		}
+	}
+}
+
+@include bp(twelve-column) {
+	.intro {
+		padding: 50px 0 50px;
+		.wrapper {
+			width: 890px;
+		}
+		.intro-section {
+			.title {
+				font-size: 26px;
+				& + p {
+					font-size: 15px;text-align: justify;
+				}
+			}
+		}
+	}	
+
+	.services {
+		h2.title {
+			font-size: 24px;
+		}
+		.service-titles {
+			li {
+				margin: 0 75px 0 0;
+				&.long {
+					span { display: inline; }
+				}
+			}
+		}
+		.service-drawer {
+			.wrapper {
+				width: 890px;
+			}
+			li {font-size: 14px;}
+			li.active {
+				&:nth-of-type(1) {
+					height: 95px;
+				}
+				&:nth-of-type(2) {
+					height: 70px;
+				}
+				&:nth-of-type(3) {
+					height: 95px;
+				}
+				&:nth-of-type(4) {
+					height: 70px;
+				}
+				&:nth-of-type(5) {
+					height: 70px;
+				}
+			}
+		}
+	}
+	.req {
+		.wrapper {
+			width: 750px;
+		}
+		h2.title {
+			font-size: 24px;
+		}
+		.quals {
+			font-size: 16px;
+		}
+	}
+}
+
+@include bp(sixteen-column) {
+	.intro {
+		.intro-section {
+			.title {
+				font-size: 28px;
+				& + p {
+					font-size: 16px;text-align: justify;
+				}
+			}
+		}
+	}
+
+	.services {
+		.service-titles {
+			li {
+				margin: 0 120px 0 0;
+			}
+		}
+		.service-drawer {
+			li {font-size: 16px;}
+			li.active {
+				&:nth-of-type(1) {
+					height: 115px;
+				}
+				&:nth-of-type(2) {
+					height: 80px;
+				}
+				&:nth-of-type(3) {
+					height: 115px;
+				}
+				&:nth-of-type(4) {
+					height: 115px;
+				}
+				&:nth-of-type(5) {
+					height: 80px;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+

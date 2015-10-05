@@ -1,0 +1,132 @@
+
+.form-container {
+	background: #f1f1f3;margin: 40px 0;padding: 0;
+	.tab-links {
+		display: inline-block;width: 100%;
+		.half {float: left;width: 50%;}
+		li {text-align: center;text-transform: uppercase;cursor: pointer;margin-bottom: 20px;}
+	}
+	fieldset {position: relative;}
+	input.input-txt {color: #198c7a;}
+	textarea {color: #198c7a;}
+	.submit {
+		background: #198c7a;height: 45px;line-height: 43px;color: white;border: none;
+		width: 100%;text-transform: uppercase;transition: .3s;
+		&:hover {
+			background: darken(#198c7a, 10%);
+		}
+	}
+}
+
+.checkbox-group {
+	.fields {
+		label {position: relative;top: 0;left: 0;}
+	}
+}
+
+// TABS
+.tab-link {
+	padding: 15px;background-color: #d6d6d9;color: #aaa;
+	letter-spacing: 2px;font-family: $font-base-bold;
+}
+.tab-link.active {
+	background: #f1f1f3;color:black;
+}
+#formTab li {
+    display: none;
+}
+#formTab li.active {
+    display: block;
+}
+
+// LABEL UP
+.form-section {
+	label {
+		position: absolute;top: 20px;left: 25px;transition: .2s ease-in-out;color: #888a8f;
+	}
+	.label-up label {
+		top: -8px;font-size: 12px;border:1px solid #223377;padding: 5px 10px;text-align: center;background: #fbfbfc;color: #223377;
+	}
+	.input-txt {
+		width: 100%;height: 45px;line-height: 50px;background-color: #fbfbfc;border: 1px solid #888a8f;
+		padding-left: 14px;margin-bottom: 15px;color: #198c7a;
+		&:focus {
+			border-color: #223377;outline: none;
+		}
+	}
+}
+// ENTRY FORMS
+.form-section {
+	min-height: 865px;
+	label {text-transform: uppercase;font-size: 14px;z-index: 1;}
+	.fieldset-section.checkbox-group { // section w/ the checkboxes
+		.title {font-size: 16px;}
+		label {color: #888a8f;}
+		.textarea { // fieldset
+			margin-top: 15px;
+			textarea {width: 100%;height: 120px;}
+		}
+	}
+}
+.nominate {
+	.textarea {
+		textarea {width: 100%;height: 300px;}
+	}
+}
+
+
+@include bp(twelve-column) {
+	.form-container {
+		width: 800px;
+		margin: 70px auto 70px;
+		.submit {
+			width: 405px;margin: 0 auto;display: block;
+		}
+	}
+	
+	// ENTRY FORMS
+	.form-section {
+		min-height: 500px;margin: 40px 0 0;
+		.fieldset-section.checkbox-group { // section w/ the checkboxes
+			.title {font-size: 16px;}
+			.textarea {
+				textarea {height: 180px;}
+			}
+		}
+		.fieldset-section.half {float: left;width: 50%;padding: 0 20px;}
+		.fields.half {float: left;width: 50%;}
+	}
+	.nominate {
+		.textarea {
+			textarea {width: 100%;height: 300px;}
+		}
+	}
+
+	// TABS
+	.tab-link {
+		padding: 25px;
+	}
+}
+
+@include bp(sixteen-column) {
+	.form-container {
+		width: 890px;
+		margin: 40px auto 70px;
+		.submit {
+			width: 450px;
+		}
+	}
+	// ENTRY FORMS
+	.form-section {
+		min-height: 500px;margin: 40px 0 0;
+		.fieldset-section.checkbox-group { // section w/ the checkboxes
+			.title {font-size: 16px;}
+		}
+		.fieldset-section.half {float: left;width: 50%;padding: 0 35px;}
+	}
+	.nominate {
+		.textarea {
+			textarea {width: 100%;height: 300px;}
+		}
+	}
+}
